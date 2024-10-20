@@ -53,28 +53,35 @@ class _CallPageState extends State<CallPage> {
                           .docs.length, // Replace with your dynamic list length
                       itemBuilder: (context, index) {
                         var doctorData = snap.docs[index].data();
-                        return ListTile(
-                          trailing: IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (builder) => VideoCall()));
-                              },
-                              icon: Icon(Icons.video_call)),
-                          title: Text(
-                            doctorData['fullName'],
-                            style: GoogleFonts.poppins(
-                                fontSize: 13,
-                                color: black,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          subtitle: Text(
-                            doctorData['email'],
-                            style: GoogleFonts.poppins(
-                                fontSize: 13,
-                                color: black,
-                                fontWeight: FontWeight.w500),
+                        return Card(
+                          child: ListTile(
+                            trailing: IconButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (builder) => VideoCall(
+                                                callingid:
+                                                    widget.userData['uuid'],
+                                                friendName:
+                                                    doctorData['fullName'],
+                                              )));
+                                },
+                                icon: Icon(Icons.video_call)),
+                            title: Text(
+                              doctorData['fullName'],
+                              style: GoogleFonts.poppins(
+                                  fontSize: 13,
+                                  color: black,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            subtitle: Text(
+                              doctorData['email'],
+                              style: GoogleFonts.poppins(
+                                  fontSize: 13,
+                                  color: black,
+                                  fontWeight: FontWeight.w500),
+                            ),
                           ),
                         );
                       },
