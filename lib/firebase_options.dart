@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -46,30 +49,20 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBAWcpNVIosQau0BTJiPDMrfE1wV4_KgNo',
-    appId: '1:913992234259:web:36ef6e1784e31db583d6e6',
-    messagingSenderId: '913992234259',
-    projectId: 'estheva-f2ab9',
-    authDomain: 'estheva-f2ab9.firebaseapp.com',
-    storageBucket: 'estheva-f2ab9.appspot.com',
-    measurementId: 'G-YVV5YHYQ52',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyARbcZAXsyzSP0yGuhGZX292wI8mR8gDco',
-    appId: '1:913992234259:android:02d510780ee00b2b83d6e6',
-    messagingSenderId: '913992234259',
-    projectId: 'estheva-f2ab9',
-    storageBucket: 'estheva-f2ab9.appspot.com',
+    apiKey: 'AIzaSyD9a3NQZYQWUp3-NkbEzOjvS6b-3OtgrFo',
+    appId: '1:934119296637:android:7ee6afac6ea7fc072e2b14',
+    messagingSenderId: '934119296637',
+    projectId: 'estheva-5127e',
+    storageBucket: 'estheva-5127e.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCeEm0H82vFbciCO2smNtWiNrNA23ewiHg',
-    appId: '1:913992234259:ios:eb064eb7cde5af4683d6e6',
-    messagingSenderId: '913992234259',
-    projectId: 'estheva-f2ab9',
-    storageBucket: 'estheva-f2ab9.appspot.com',
-    iosBundleId: 'com.medicaredoctors.app',
+    apiKey: 'AIzaSyABeheU-ha2Rp_ZIkUmIscFaS8--McU1Uo',
+    appId: '1:934119296637:ios:3f5b2aabfaf708ee2e2b14',
+    messagingSenderId: '934119296637',
+    projectId: 'estheva-5127e',
+    storageBucket: 'estheva-5127e.appspot.com',
+    iosBundleId: 'com.esthevadoctor.app',
   );
 }

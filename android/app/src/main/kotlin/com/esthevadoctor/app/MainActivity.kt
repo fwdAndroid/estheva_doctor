@@ -1,4 +1,4 @@
-package com.estheva_doctor.app
+package com.esthevadoctor.app
 
 import io.flutter.embedding.android.FlutterActivity
 
