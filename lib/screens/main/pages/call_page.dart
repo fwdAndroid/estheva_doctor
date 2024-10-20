@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:estheva_doctor/screens/video/video_call.dart';
 import 'package:estheva_doctor/uitls/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,6 +54,14 @@ class _CallPageState extends State<CallPage> {
                       itemBuilder: (context, index) {
                         var doctorData = snap.docs[index].data();
                         return ListTile(
+                          trailing: IconButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) => VideoCall()));
+                              },
+                              icon: Icon(Icons.video_call)),
                           title: Text(
                             doctorData['fullName'],
                             style: GoogleFonts.poppins(
