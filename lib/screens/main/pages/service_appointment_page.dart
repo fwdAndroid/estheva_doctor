@@ -1,20 +1,23 @@
 import 'package:estheva_doctor/screens/doctor_tabs/cancelled.dart';
 import 'package:estheva_doctor/screens/doctor_tabs/completed.dart';
 import 'package:estheva_doctor/screens/doctor_tabs/upcomming.dart';
+import 'package:estheva_doctor/screens/service_tab/service_cancelled.dart';
+import 'package:estheva_doctor/screens/service_tab/service_complete.dart';
+import 'package:estheva_doctor/screens/service_tab/service_upcoming.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:estheva_doctor/uitls/colors.dart';
 
-class AppointmentPage extends StatefulWidget {
+class ServiceAppointmentPage extends StatefulWidget {
   final Map<String, dynamic> userData;
-  const AppointmentPage({super.key, required this.userData});
+  const ServiceAppointmentPage({super.key, required this.userData});
 
   @override
-  State<AppointmentPage> createState() => _AppointmentPageState();
+  State<ServiceAppointmentPage> createState() => _ServiceAppointmentPageState();
 }
 
-class _AppointmentPageState extends State<AppointmentPage> {
+class _ServiceAppointmentPageState extends State<ServiceAppointmentPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -25,7 +28,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
           centerTitle: true,
           automaticallyImplyLeading: false,
           title: Text(
-            "Appointments",
+            "Service Appointments",
             style: GoogleFonts.poppins(color: appColor),
           ),
           bottom: TabBar(
@@ -55,13 +58,13 @@ class _AppointmentPageState extends State<AppointmentPage> {
         ),
         body: TabBarView(
           children: <Widget>[
-            Upcomming(
+            ServiceUpcoming(
               userData: widget.userData,
             ),
-            Completed(
+            ServiceComplete(
               userData: widget.userData,
             ),
-            Cancelled(
+            ServiceCancelled(
               userData: widget.userData,
             )
           ],

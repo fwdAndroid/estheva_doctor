@@ -1,4 +1,5 @@
 import 'package:estheva_doctor/screens/main/pages/call_page.dart';
+import 'package:estheva_doctor/screens/main/pages/service_appointment_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:estheva_doctor/screens/main/pages/appointment_page.dart';
@@ -23,6 +24,7 @@ class _MainDashboardState extends State<MainDashboard> {
       HomePage(userData: widget.userData), // Pass userData to HomePage
       CallPage(userData: widget.userData),
       AppointmentPage(userData: widget.userData),
+      ServiceAppointmentPage(userData: widget.userData),
       HistoryPage(
         userData: widget.userData,
       ),
@@ -87,6 +89,18 @@ class _MainDashboardState extends State<MainDashboard> {
               ),
               BottomNavigationBarItem(
                 icon: _currentIndex == 3
+                    ? Icon(
+                        Icons.room_service,
+                        color: mainColor,
+                      )
+                    : Icon(
+                        Icons.supervised_user_circle_outlined,
+                        color: Colors.grey,
+                      ),
+                label: 'Service',
+              ),
+              BottomNavigationBarItem(
+                icon: _currentIndex == 4
                     ? Image.asset(
                         "assets/history_blue.png",
                         height: 18,

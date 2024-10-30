@@ -73,33 +73,6 @@ class _HistoryPageState extends State<HistoryPage> {
                 children: [
                   ListTile(
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (builder) => ShowServices()));
-                    },
-                    leading: Icon(
-                      Icons.post_add,
-                      color: appColor,
-                    ),
-                    title: Text(
-                      "Appointment History",
-                      style: GoogleFonts.workSans(
-                          fontWeight: FontWeight.w500, fontSize: 16),
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: appColor,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0, right: 8),
-                    child: Divider(
-                      color: borderColor,
-                    ),
-                  ),
-                  ListTile(
-                    onTap: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(

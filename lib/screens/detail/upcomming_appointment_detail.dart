@@ -108,15 +108,15 @@ class _UpcommingAppointmentDetailState
                           Row(
                             children: [
                               Text(
-                                widget
-                                    .appointmentDate, // Display the formatted date
+                                widget.appointmentDate
+                                    .toString(), // Display the formatted date
                                 style: GoogleFonts.poppins(
                                   color: textColor,
                                   fontSize: 12,
                                 ),
                               ),
                               Text(
-                                widget.appointmentStartTime,
+                                widget.appointmentStartTime.toString(),
                                 style: GoogleFonts.poppins(
                                   color: Colors.black,
                                   fontSize: 12,
@@ -169,7 +169,7 @@ class _UpcommingAppointmentDetailState
                             ),
                           ),
                           Text(
-                            widget.appointmentDate,
+                            widget.appointmentDate.toString(),
                             style: GoogleFonts.poppins(
                               color: dateColor,
                               fontSize: 14,
@@ -190,7 +190,7 @@ class _UpcommingAppointmentDetailState
                             ),
                           ),
                           Text(
-                            widget.appointmentStartTime,
+                            widget.appointmentStartTime.toString(),
                             style: GoogleFonts.poppins(
                               color: dateColor,
                               fontSize: 14,
